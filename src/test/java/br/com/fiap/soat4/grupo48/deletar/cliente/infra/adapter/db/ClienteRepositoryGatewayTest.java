@@ -1,6 +1,5 @@
 package br.com.fiap.soat4.grupo48.deletar.cliente.infra.adapter.db;
 
-import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.domain.model.Cliente;
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.infra.adapter.db.ClienteEntity;
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.infra.adapter.db.ClienteRepositoryGateway;
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.infra.adapter.db.SpringClienteRepository;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Optional;
@@ -105,7 +103,7 @@ public class ClienteRepositoryGatewayTest {
             var id = UUID.randomUUID();
             ClienteEntity clienteEntity = ClienteHelper.gerarClienteEntity();
             clienteEntity.setId(id);
-            when(springClienteRepository.findById(id)).thenReturn(Optional.of(clienteEntity)); // Mock the findById method
+            when(springClienteRepository.findById(id)).thenReturn(Optional.of(clienteEntity));
             clienteRepositoryGateway.salvar(clienteEntity);
 
             // Act

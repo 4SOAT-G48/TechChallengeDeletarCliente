@@ -2,7 +2,6 @@ package br.com.fiap.soat4.grupo48.deletar.cliente.application.service;
 
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.application.service.ClienteUsecaseImpl;
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.application.service.port.out.IClienteRepositoryGateway;
-import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.domain.model.Cliente;
 import br.com.fiap.soat4.grupo48.deletar.cliente.cliente.infra.adapter.db.ClienteEntity;
 import br.com.fiap.soat4.grupo48.deletar.cliente.utils.ClienteHelper;
 import org.junit.jupiter.api.AfterEach;
@@ -67,7 +66,7 @@ public class ClienteUsecaseImplTest {
             var id = UUID.randomUUID();
             ClienteEntity cliente = ClienteHelper.gerarClienteEntity();
             cliente.setId(id);
-            cliente.setAtivo(true); // Assume cliente is initially active
+            cliente.setAtivo(true);
             when(clienteRepositoryGateway.buscarPeloId(id)).thenReturn(cliente);
 
             // Act

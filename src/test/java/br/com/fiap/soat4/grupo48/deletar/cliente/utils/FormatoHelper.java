@@ -14,7 +14,6 @@ public abstract class FormatoHelper {
 
     public static String asXmlString(final Object object) {
         try {
-            //retornar o objeto passado em uma string com formato xml
             XmlMapper xmlMapper = new XmlMapper();
             return xmlMapper.writeValueAsString(object);
         } catch (Exception e) {
